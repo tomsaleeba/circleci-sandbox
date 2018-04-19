@@ -2,7 +2,7 @@
 cd `dirname "$0"`
 cd ..
 
-target=some-file.js
+target=config/datastores.js
 
 # we need to escape the & character because that has special meaning to sed
 fixed=`bash -c "echo '$MONGO_URL' | sed 's+&+\\\\\&+g'"`
