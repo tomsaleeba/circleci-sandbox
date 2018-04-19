@@ -2,6 +2,10 @@
 cd `dirname "$0"`
 cd ..
 
+target=some-file.js
+
 # we need to escape the & character because that has special meaning to sed
 fixed=`bash -c "echo '$MONGO_URL' | sed 's+&+\\\\\&+g'"`
-sed -i "s+process.env.MONGO_URL+'$fixed'+" some-file.js
+sed -i "s+process.env.MONGO_URL+'$fixed'+" $target
+
+tail $target
